@@ -12,7 +12,6 @@ import {
   List,
   ListIcon,
   ListItem,
-  SimpleGrid,
   Stack,
   Text,
   VStack,
@@ -67,7 +66,7 @@ const researchThemes: ResearchTheme[] = [
     ],
   },
   {
-    title: 'Universality in Cross-Linguistic Cognitive Patterns',
+    title: 'Universality in Language and Cognition',
     items: [
       {
         title: 'Mandarin Meaning Bank',
@@ -139,6 +138,7 @@ const publications = [
     venue: 'National Language Standard GF 0031—2026',
     year: '2026',
     type: 'Standard',
+    url: 'http://www.moe.gov.cn/jyb_sjzl/ziliao/A19/202604/t20260407_1433016.html',
   },
   {
     title: 'On the Continued Value of Universal Dependencies in the Era of Large Language Models',
@@ -146,6 +146,7 @@ const publications = [
     venue: 'Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics',
     year: '2026',
     type: 'Conference',
+    url: 'https://aclanthology.org/2026.acl-long.803/',
   },
   {
     title: 'Measuring and Evaluating Syntactic Distance Across Languages Using Universal Dependencies',
@@ -153,6 +154,7 @@ const publications = [
     venue: 'Journal of Quantitative Linguistics',
     year: '2025',
     type: 'Journal',
+    url: 'https://www.tandfonline.com/doi/full/10.1080/09296174.2025.2569581',
   },
   {
     title: 'Compositional Syntactico-SemBanking for English as a Second or Foreign Language',
@@ -160,6 +162,7 @@ const publications = [
     venue: 'Findings of the 63rd Annual Meeting of the Association for Computational Linguistics',
     year: '2025',
     type: 'Conference',
+    url: 'https://aclanthology.org/2025.findings-acl.1252/',
   },
   {
     title: 'Referentialization in Mandarin Chinese: A Generative Typology Perspective',
@@ -167,6 +170,7 @@ const publications = [
     venue: 'Linguistic Sciences',
     year: '2025',
     type: 'Journal',
+    url: 'https://journal15.magtechjournal.com/Jwk_yykx/CN/10.7509/j.linsci.202404.036068',
   },
   {
     title: 'UG-Schematic Annotation for Event Nominals: A Case Study in Mandarin Chinese',
@@ -174,7 +178,7 @@ const publications = [
     venue: 'Computational Linguistics',
     year: '2023',
     type: 'Journal',
-    url: 'https://direct.mit.edu/coli',
+    url: 'https://aclanthology.org/2024.cl-2.3/',
   },
   {
     title: 'Digital Practices in Linguistics: Dynamic and Continuous Categorization of Semi-modal Verbs in Mandarin Chinese',
@@ -214,6 +218,7 @@ const publications = [
     venue: 'arXiv preprint',
     year: 'Preprint',
     type: 'Preprint',
+    url: 'https://arxiv.org/abs/2506.04887',
   },
   {
     title: 'Towards Linguistically Informed Representations for English as a Second or Foreign Language: Review, Construction and Application',
@@ -221,6 +226,7 @@ const publications = [
     venue: 'arXiv preprint',
     year: 'Preprint',
     type: 'Preprint',
+    url: 'https://arxiv.org/abs/2604.09008',
   },
 ];
 
@@ -311,7 +317,7 @@ export default function App() {
               </Heading>
               <Divider mb={5} />
               <Text color="gray.700" lineHeight="tall" maxW="4xl">
-                I am a computational linguist studying language acquisition, cross-linguistic meaning representation, and the relationship between language models and human language intelligence. My work combines linguistic theory, cognitive perspectives, corpus annotation, and controlled computational modeling to understand how linguistic knowledge is represented, learned, and transferred across languages.
+                I am a computational linguist. My work combines linguistic theory, cognitive perspectives, corpus annotation, and controlled computational modeling to understand how linguistic knowledge is represented, learned, and transferred across languages.
               </Text>
               <Wrap mt={5} spacing={4}>
                 <WrapItem>
@@ -319,14 +325,6 @@ export default function App() {
                     <HStack spacing={2}>
                       <FaEnvelope aria-hidden />
                       <Text>liwenxi@pku.edu.cn</Text>
-                    </HStack>
-                  </Link>
-                </WrapItem>
-                <WrapItem>
-                  <Link href="https://mandarinmeaningbank.github.io/" isExternal color="teal.600" fontWeight="semibold">
-                    <HStack spacing={2}>
-                      <FaExternalLinkAlt aria-hidden />
-                      <Text>Mandarin Meaning Bank</Text>
                     </HStack>
                   </Link>
                 </WrapItem>
@@ -387,11 +385,11 @@ export default function App() {
                 <Heading as="h3" fontSize="xl" color="teal.700" mb={4}>
                   {theme.title}
                 </Heading>
-                <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={4}>
+                <Stack spacing={4}>
                   {theme.items.map((item) => (
                     <ResearchCard key={item.title} item={item} />
                   ))}
-                </SimpleGrid>
+                </Stack>
               </Box>
             ))}
           </Stack>
